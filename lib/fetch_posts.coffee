@@ -52,7 +52,7 @@ getURL = (since = null, untilTime = null) ->
   # Explicitly list fields so can set comment limits to 999 which should fetch
   # all comments in one pass.
   url = "https://graph.facebook.com/#{ program.group_id }/feed?limit=100&access_token=#{ program.accessToken }&
-fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes,comments.limit(999)"
+fields=from,to,message,picture,link,name,caption,description,created_time,updated_time,likes.limit(999),comments.limit(999)"
 
   unless untilTime?
     url += "&until=#{moment().unix()}"
